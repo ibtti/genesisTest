@@ -1,7 +1,7 @@
 package com.example.genesistest.controllers;
 
 import com.example.genesistest.entities.Freelancer;
-import com.example.genesistest.repositoriesImpl.FreelancerRepositoryImpl;
+import com.example.genesistest.services.FreelancerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 public class FreelancerController {
 
     @Autowired
-    public FreelancerRepositoryImpl freelancerRepository;
+    public FreelancerService freelancerRepository;
 
     @GetMapping("/getAllFreelancers")
     public List<Freelancer> getAllFreelancer(){

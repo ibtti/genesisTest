@@ -2,7 +2,7 @@ package com.example.genesistest.controllers;
 
 
 import com.example.genesistest.entities.Contact;
-import com.example.genesistest.repositoriesImpl.ContactRepositoryImpl;
+import com.example.genesistest.services.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RestController("/contact")
 public class ContactController {
     @Autowired
-    public ContactRepositoryImpl contactRepository;
+    public ContactService contactRepository;
 
     @GetMapping("/getAllContacts")
     public List<Contact> getAllContacts(){

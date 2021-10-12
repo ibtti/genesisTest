@@ -1,4 +1,4 @@
-package com.example.genesistest.repositoriesImpl;
+package com.example.genesistest.services;
 
 import com.example.genesistest.entities.Company;
 import com.example.genesistest.entities.Contact;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class CompanyRepositoryImpl {
+public class CompanyService {
 
     @Autowired
     public CompanyRepository companyRepository;

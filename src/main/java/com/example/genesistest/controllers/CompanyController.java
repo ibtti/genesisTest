@@ -3,7 +3,7 @@ package com.example.genesistest.controllers;
 
 import com.example.genesistest.entities.Company;
 import com.example.genesistest.entities.Contact;
-import com.example.genesistest.repositoriesImpl.CompanyRepositoryImpl;
+import com.example.genesistest.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class CompanyController {
 
     @Autowired
-    public CompanyRepositoryImpl companyRepository;
+    public CompanyService companyRepository;
 
     @GetMapping("/getAllCompanies")
     public List<Company> getAllCompanies(){

@@ -1,7 +1,6 @@
-package com.example.genesistest.repositoriesImpl;
+package com.example.genesistest.services;
 
 
-import com.example.genesistest.entities.Company;
 import com.example.genesistest.entities.Freelancer;
 import com.example.genesistest.repositories.CompanyRepository;
 import com.example.genesistest.repositories.FreelancerRepository;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FreelancerRepositoryImpl {
+public class FreelancerService {
 
     @Autowired
     public FreelancerRepository freelancerRepository;
