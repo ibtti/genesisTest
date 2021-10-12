@@ -6,11 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "company")
-public class Company {
+public class CompanyEntity {
 
     @Id
     @Column(name = "idCompany", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String idCompany;
 
     @Column (name="TVA")
@@ -21,7 +20,7 @@ public class Company {
 
     @ManyToOne
     @JsonIgnore
-    private Contact contact;
+    private ContactEntity contact;
 
     public String getId() {
         return idCompany;
@@ -32,7 +31,7 @@ public class Company {
     }
 
 
-    public Company() {
+    public CompanyEntity() {
     }
 
     public String getTVA() {
@@ -52,11 +51,11 @@ public class Company {
     }
 
 
-    public Contact getContact() {
+    public ContactEntity getContact() {
         return contact;
     }
 
-    public void setContact(Contact contact) {
+    public void setContact(ContactEntity contact) {
         this.contact = contact;
     }
 }

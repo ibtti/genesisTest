@@ -7,17 +7,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "freelancer")
-public class Freelancer extends Contact{
+public class FreelancerEntity extends ContactEntity {
 
     @Column(name = "TVA_freelancer")
     private String TVA;
 
-    public Freelancer() {
+    public FreelancerEntity() {
             super();
             this.TVA=null;
     }
 
-    public Freelancer(String firstName, String lastName, String address, List<Company> companies, String TVA) {
+    public FreelancerEntity(String firstName, String lastName, String address, List<CompanyEntity> companies, String TVA) {
         super(firstName, lastName, address, companies);
         this.TVA = TVA;
     }

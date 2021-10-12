@@ -1,9 +1,9 @@
 package com.example.genesistest.controllers;
 
 
-import com.example.genesistest.entities.Company;
-import com.example.genesistest.entities.Contact;
-import com.example.genesistest.services.CompanyService;
+import com.example.genesistest.entities.CompanyEntity;
+import com.example.genesistest.entities.ContactEntity;
+import com.example.genesistest.services.serviceImpl.CompanyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,29 +13,30 @@ import java.util.List;
 public class CompanyController {
 
     @Autowired
-    public CompanyService companyRepository;
+    public CompanyServiceImpl companyRepository;
 
     @GetMapping("/getAllCompanies")
-    public List<Company> getAllCompanies(){
+    public List<CompanyEntity> getAllCompanies(){
         return companyRepository.getCompanies();
     }
 
     @GetMapping("/getCompany/{id}")
-    public Company getCompany(@PathVariable String id){
+    public CompanyEntity getCompany(@PathVariable String id){
         return companyRepository.getCompany(id);
     }
+
     @PostMapping("/addCompany")
-    public void addCompany(@RequestBody Company company){
-         companyRepository.addCompany(company);
+    public void addCompany(@RequestBody CompanyEntity companyEntity){
+         companyRepository.addCompany(companyEntity);
     }
 
     @PostMapping("/updateCompany/{id}")
-    public void updateCompany(@PathVariable String id,@RequestBody Company company){
-        companyRepository.updateCompany(id, company);
+    public void updateCompany(@PathVariable String id,@RequestBody CompanyEntity companyEntity){
+        companyRepository.updateCompany(id, companyEntity);
     }
 
     @PostMapping("/addCompanyContact/{id}")
-    public void addContact(@PathVariable String id, @RequestBody Contact contact){
+    public void addContact(@PathVariable String id, @RequestBody ContactEntity contact){
         companyRepository.addContact(id,contact);
     }
 

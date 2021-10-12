@@ -1,8 +1,8 @@
 package com.example.genesistest.controllers;
 
 
-import com.example.genesistest.entities.Contact;
-import com.example.genesistest.services.ContactService;
+import com.example.genesistest.entities.ContactEntity;
+import com.example.genesistest.services.serviceImpl.ContactServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,24 +11,24 @@ import java.util.List;
 @RestController("/contact")
 public class ContactController {
     @Autowired
-    public ContactService contactRepository;
+    public ContactServiceImpl contactRepository;
 
     @GetMapping("/getAllContacts")
-    public List<Contact> getAllContacts(){
+    public List<ContactEntity> getAllContacts(){
         return contactRepository.getContacts();
     }
 
     @GetMapping("/getContact/{id}")
-    public Contact getContact(@PathVariable String id){
+    public ContactEntity getContact(@PathVariable String id){
         return contactRepository.getContact(id);
     }
     @PostMapping("/addContact")
-    public void addContact(@RequestBody Contact contact){
+    public void addContact(@RequestBody ContactEntity contact){
         contactRepository.addContact(contact);
     }
 
     @PostMapping("/updateContact/{id}")
-    public void updateContact(@PathVariable String id,@RequestBody Contact contact){
+    public void updateContact(@PathVariable String id,@RequestBody ContactEntity contact){
         contactRepository.updateContact(id, contact);
     }
 

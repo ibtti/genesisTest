@@ -1,7 +1,7 @@
-package com.example.genesistest.services;
+package com.example.genesistest.services.serviceImpl;
 
 
-import com.example.genesistest.entities.Freelancer;
+import com.example.genesistest.entities.FreelancerEntity;
 import com.example.genesistest.repositories.CompanyRepository;
 import com.example.genesistest.repositories.FreelancerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,35 +11,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FreelancerService {
+public class FreelancerServiceImpl {
 
     @Autowired
     public FreelancerRepository freelancerRepository;
     @Autowired
     public CompanyRepository companyRepository;
 
-    public List<Freelancer> getFreelancers(){
-        List<Freelancer> freelancers = new ArrayList<Freelancer>();
-        freelancerRepository.findAll().forEach(freelancers::add);
-        return freelancers;
+    public List<FreelancerEntity> getFreelancers(){
+        List<FreelancerEntity> freelancerEntities = new ArrayList<FreelancerEntity>();
+        freelancerRepository.findAll().forEach(freelancerEntities::add);
+        return freelancerEntities;
     }
 
-    public Freelancer getFreelancer(String id){
+    public FreelancerEntity getFreelancer(String id){
         return freelancerRepository.findById(id).get();
     }
 
-    public void addFreelancer(Freelancer freelancer){
+    public void addFreelancer(FreelancerEntity freelancerEntity){
 
 
-        freelancerRepository.save(freelancer);
+        freelancerRepository.save(freelancerEntity);
     }
 
-    public void updateFreelancer(String id, Freelancer freelancer){
+    public void updateFreelancer(String id, FreelancerEntity freelancerEntity){
         boolean exists = freelancerRepository.existsById(id);
         if (!exists){
             throw new IllegalStateException("Freelancer with id "+ id +" does not exist");
         }
-        freelancerRepository.save(freelancer);
+        freelancerRepository.save(freelancerEntity);
     }
 
     public void deleteFreelancer(String id){

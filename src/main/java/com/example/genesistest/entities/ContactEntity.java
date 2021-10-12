@@ -1,16 +1,13 @@
 package com.example.genesistest.entities;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
 @Table(name = "contact")
-public class Contact {
+public class ContactEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private String id;
 
@@ -23,9 +20,9 @@ public class Contact {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(targetEntity=Company.class, mappedBy="contact", fetch=FetchType.LAZY)
+    @OneToMany(targetEntity= CompanyEntity.class, mappedBy="contact", fetch=FetchType.LAZY)
     @Column(name = "companies")
-    private List<Company> companies;
+    private List<CompanyEntity> companies;
 
     public String getId() {
         return id;
@@ -36,15 +33,15 @@ public class Contact {
     }
 
 
-    public Contact() {}
+    public ContactEntity() {}
 
-    public Contact(String firstName, String lastName, String address) {
+    public ContactEntity(String firstName, String lastName, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
     }
 
-    public Contact(String firstName, String lastName, String address, List<Company> companies) {
+    public ContactEntity(String firstName, String lastName, String address, List<CompanyEntity> companies) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -76,11 +73,11 @@ public class Contact {
         this.address = address;
     }
 
-    public List<Company> getCompanies() {
+    public List<CompanyEntity> getCompanies() {
         return companies;
     }
 
-    public void setCompanies(List<Company> companies) {
+    public void setCompanies(List<CompanyEntity> companies) {
         this.companies = companies;
     }
 }
