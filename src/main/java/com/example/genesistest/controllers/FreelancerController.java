@@ -1,7 +1,7 @@
 package com.example.genesistest.controllers;
 
 import com.example.genesistest.entities.FreelancerEntity;
-import com.example.genesistest.services.serviceImpl.FreelancerServiceImpl;
+import com.example.genesistest.services.impl.FreelancerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

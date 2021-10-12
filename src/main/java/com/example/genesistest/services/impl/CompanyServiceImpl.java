@@ -1,4 +1,4 @@
-package com.example.genesistest.services.serviceImpl;
+package com.example.genesistest.services.impl;
 
 import com.example.genesistest.entities.CompanyEntity;
 import com.example.genesistest.entities.ContactEntity;
@@ -45,7 +45,11 @@ public class CompanyServiceImpl implements CompanyService {
 
         CompanyEntity companyEntity = companyRepository.findById(id).orElseThrow( () -> new IllegalStateException("Company with id "+ id +" does not exist"));
         if (contact != null  && !Objects.equals(companyEntity.getContact(),contact)){
-            companyEntity.setContact((contact));
+            List<ContactEntity> contacts = new ArrayList<ContactEntity>();
+            boolean exist = contactRepository.existsById(contact.getId());
+            if(!exist) contactRepository.save(contact);
+            contacts.add(contact);
+            companyEntity.setContact(contacts);
         }
     }
 

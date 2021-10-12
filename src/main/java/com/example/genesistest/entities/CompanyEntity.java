@@ -3,6 +3,7 @@ package com.example.genesistest.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "company")
@@ -18,9 +19,9 @@ public class CompanyEntity {
     @Column (name="adresse")
     private String address;
 
-    @ManyToOne
+    @ManyToMany
     @JsonIgnore
-    private ContactEntity contact;
+    private List<ContactEntity> contacts;
 
     public String getId() {
         return idCompany;
@@ -50,12 +51,11 @@ public class CompanyEntity {
         this.address = address;
     }
 
-
-    public ContactEntity getContact() {
-        return contact;
+    public List<ContactEntity> getContact() {
+        return contacts;
     }
 
-    public void setContact(ContactEntity contact) {
-        this.contact = contact;
+    public void setContact(List<ContactEntity> contact) {
+        this.contacts = contact;
     }
 }

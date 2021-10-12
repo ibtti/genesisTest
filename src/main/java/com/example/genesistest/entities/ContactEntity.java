@@ -20,7 +20,7 @@ public class ContactEntity {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(targetEntity= CompanyEntity.class, mappedBy="contact", fetch=FetchType.LAZY)
+    @ManyToMany(mappedBy="contacts")
     @Column(name = "companies")
     private List<CompanyEntity> companies;
 

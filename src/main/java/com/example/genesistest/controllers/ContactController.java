@@ -2,7 +2,7 @@ package com.example.genesistest.controllers;
 
 
 import com.example.genesistest.entities.ContactEntity;
-import com.example.genesistest.services.serviceImpl.ContactServiceImpl;
+import com.example.genesistest.services.impl.ContactServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

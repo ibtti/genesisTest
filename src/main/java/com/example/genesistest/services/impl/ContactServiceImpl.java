@@ -1,4 +1,4 @@
-package com.example.genesistest.services.serviceImpl;
+package com.example.genesistest.services.impl;
 
 import com.example.genesistest.entities.ContactEntity;
 import com.example.genesistest.repositories.CompanyRepository;
