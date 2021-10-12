@@ -4,6 +4,7 @@ package com.example.genesistest.services.serviceImpl;
 import com.example.genesistest.entities.FreelancerEntity;
 import com.example.genesistest.repositories.CompanyRepository;
 import com.example.genesistest.repositories.FreelancerRepository;
+import com.example.genesistest.services.FreelanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FreelancerServiceImpl {
+public class FreelancerServiceImpl implements FreelanceService {
 
     @Autowired
     public FreelancerRepository freelancerRepository;
