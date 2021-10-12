@@ -7,8 +7,10 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "contact")
 public class Contact {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private String id;
 

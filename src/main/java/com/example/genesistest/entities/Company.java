@@ -5,10 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "company")
 public class Company {
 
     @Id
     @Column(name = "idCompany", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String idCompany;
 
     @Column (name="TVA")
