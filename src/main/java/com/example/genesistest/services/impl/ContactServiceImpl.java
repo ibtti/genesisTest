@@ -28,7 +28,8 @@ public class ContactServiceImpl implements ContactService {
     }
 
     public void addContact(ContactEntity contact){
-
+        boolean exist = contact.getCompanies().isEmpty();
+        if (!exist) contact.getCompanies().forEach(companyEntity -> companyRepository.save(companyEntity));
         contactRepository.save(contact);
     }
 

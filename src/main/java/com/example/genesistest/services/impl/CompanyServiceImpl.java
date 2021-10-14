@@ -30,7 +30,10 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     public void addCompany(CompanyEntity companyEntity){
+
         companyRepository.save(companyEntity);
+
+
     }
 
     public void updateCompany(String id, CompanyEntity companyEntity){
