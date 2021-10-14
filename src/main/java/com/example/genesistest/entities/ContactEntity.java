@@ -1,5 +1,7 @@
 package com.example.genesistest.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -77,6 +79,7 @@ public class ContactEntity {
         return companies;
     }
 
+    @JsonIgnore
     public void setCompanies(List<CompanyEntity> companies) {
         this.companies = companies;
     }

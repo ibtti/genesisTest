@@ -20,7 +20,6 @@ public class CompanyEntity {
     private String address;
 
     @ManyToMany
-
     private List<ContactEntity> contacts;
 
     public String getId() {
@@ -50,6 +49,7 @@ public class CompanyEntity {
     public void setAddress(String address) {
         this.address = address;
     }
+
     @JsonIgnore
     public List<ContactEntity> getContact() {
         return contacts;
